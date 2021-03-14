@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{% static 'css/plyr.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/videos_page.css'%}">
+    <title>Video Page | SchoolAtHome</title>
+  </head>
+  <body>
+    <div class="container mt-3">
+    {% if lectures %}
+      {% if req_video %}
+      <div id="video-div">
+        <video id="player" playsinline controls data-poster="{{req_video.thumbnail.url}}">
+          <source src="{{req_video.video.url}}" type="video/mp4" />
+        </video>
+      </div>
+      <div id="discription">
+        <h3 class="video-title-h1" style="font-family: Arial;"><b>{{req_video.name_of_video}}</b></h3>
+        <p style="font-weight: bold;">
+          <p id="video-detail-p">{{req_video.details}}<br>Uploaded On:{{req_video.uploaded_on}}</p>
+        </p>
+        <a class="details-a">Details</a>
+        
+      </div>
+      {% else %}
+      <h1>Start learning -></h1>
+      {% endif %}
+    </div>
+    <div class="container" id="video-list">
+      {% for video in lectures %}
+      <a href="{% url 'req_video' vid=video.vid channel_id=video.channel_name.id%}" class="course-link-a">
+        <img src="{{video.thumbnail.url}}" alt="" class="thumbnail">
+          <p class="discription-p">
+              <h6 class="course-title-h3">{{video.name_of_video}}</h6><br>
+          </p>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div>
+      <h1>No videos uploaded yet </h1>
+      <a href="/">Go back To home</a>
+    </div>
+    {% endif %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/plyr.polyfilled.js'%}"></script>
+    <script>
+      const player = new Plyr('#player');
+      
+    </script>
+    <script>
+          $("#video-detail-p").hide();
+          $(".details-a").click(function (evt){
+            $("#video-detail-p").toggle(100,function (){
+              if(evt.target.innerHTML== "Details"){
+                evt.target.innerHTML="Show less";
+              }
+              else{
+                evt.target.innerHTML="Details";
+              }
+            })
+          })
+    </script>
+  </body>
+</html>

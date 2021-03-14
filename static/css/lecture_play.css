@@ -1,0 +1,32 @@
+.plyr {
+  height: 550px;
+  width: 80%;
+  --plyr-color-main: lightgreen;
+  margin: 20px auto;
+}
+#lecture-list {
+  height: 550px;
+  width: 60%;
+  border: 2px solid rgb(247 246 246);
+  margin: 20px auto;
+  overflow-y: scroll;
+}
+.lecture-div {
+  width: 100%;
+  height: 100px;
+  border: none;
+  background: rgb(247 246 246);
+  margin: 2px auto;
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  width: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "arial rounded mt";
+}

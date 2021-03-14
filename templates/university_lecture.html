@@ -1,0 +1,65 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/uni_lecture.css' %}">
+    <title>Course Lectures | schoolathome.com</title>
+  </head>
+  <body>
+    <div class="">
+      {% if lectures %}
+      <div class="row">
+        {% for lecture in lectures%}
+        <div class="col-md-3 ">
+          <a href="{% url 'lecture_play' lec_id=lecture.id %}">
+          <div class="card" style="width: 18rem;">
+            <div class="dark-shadow"></div>
+            {% if lecture.thumbnail %}
+            <img
+              class="card-img-top"
+              src="{{ lecture.thumbnail.url}}"
+              alt="Card image cap"
+              width="284"
+              height="119"
+            />
+            {% else %}
+            <img
+              class="card-img-top"
+              src="{% static 'images/No-Photo-Available.png'%}"
+              alt="Card image cap"
+              width="284"
+              height="119"
+            />
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">Lecture No </h5>
+            </div>
+          </div>
+        </a>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <h1>Lectures Not started yet</h1>
+      {% endif %}
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script>
+      $(function(){
+        $('.dark-shadow').hover(function(){
+          $(this).css("background","black");
+        },function(){
+          $(this).css("background","transparent");
+        });
+      });
+    </script>
+    <script>
+        var card=document.querySelectorAll(".card-title");
+        var srno=0;
+        card.forEach( element =>{
+          srno++;
+          element.innerHTML=element.innerHTML+String(srno);
+        });
+    </script>
+  </body>
+</html>

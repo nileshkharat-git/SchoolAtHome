@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: space-around;
+}
+
+.details-a {
+  font-weight: bold;
+}
+.details-a:hover {
+  cursor: pointer ;
+}
+#video-div{
+    width: 850px;
+}
+#video-list{
+    margin: 20px 70px 0 0; 
+    width: 550px;
+    height: 600px;
+    background-color: rgb(247, 247, 247);
+    overflow: scroll;
+}
+.thumbnail{
+    width: 150px;
+    height: 95px;
+}
+.course-link-a{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+.course-link-a:hover{
+    text-decoration: none;
+}
+.course-title-h3{
+    width: 150px;
+    color: black;
+}

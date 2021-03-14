@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#title-box {
+    position: absolute;
+    left: -148px;
+    top: -146px;
+    background: lightgreen;
+    width: 536px;
+    height: 297px;
+    transform: rotate(-33deg);
+    z-index: -1;
+}
+#title{
+    color: #ffffff;
+}
+#title-text{
+    display: inline-block;
+    margin-left: 20px;
+    transform: rotate(-33deg);
+    position: relative;
+    bottom: -77px;
+    left: -32px;
+    top: 60px;
+    font-weight: bolder;
+}
+#navbar{
+    height: 100px;
+}
+.bars{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 40px;
+    margin-right: 20px;
+}
+.click{
+    margin-top: 0;
+    margin-right: 255px;
+    font-size: 40px;
+    transition: 500ms;
+}
+#greet{
+    text-align: center;
+    border-bottom: 2px solid gray;
+    padding-top: 20px;
+}
+.sidebar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background: #fff;
+    padding: 0;
+    margin-right: -250px;
+    transition: 500ms;
+
+}
+.show{
+    margin-right: 0;
+}
+#sidebar-ul{
+    list-style: none;margin-top: 20px;
+}
+.sidebar-ul-li{
+    font-size: 2em;
+    text-align: center;
+    background: #eee;
+    margin-bottom: 30px;
+    border-left: 10px solid transparent;
+}
+.sidebar-ul-li:hover{
+    border-color: lightgreen;
+    transition: 500ms;
+}
+.links{
+    text-decoration: none;
+    color: black;
+    font-family:arial;
+
+    
+}
+.links:hover{
+    transition: 500ms;
+    text-decoration: none;
+
+}
+
+
+
+
+.login,#logout{
+    background: lightgreen;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    width: 120px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18pt;
+    float: right;
+    right: 50px;
+    outline: none;
+    
+}
+button:focus{
+    outline: none;
+}
+.mybtn{
+    background: black;
+    color: white;
+    font-weight: bold;
+    width: 140px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18pt;
+    display: block;
+    margin: 30px auto;
+    outline: none;
+}
+#intro-para{
+    width: 800px;
+    height: 200px;
+    margin: 50px auto;
+}
+.mypara{
+    font-size: 24px;
+    font-weight: bold;
+}
+#first-image{
+    display: flex;
+    justify-content: space-around;
+}
+#first-image img,#third img{
+    position: relative;
+    left: 50px;
+}
+#first-image p{
+    width: 400px;
+    margin: auto;
+}
+#middle{
+    height: 400px;
+}
+#middle p{
+    width: 400px;
+    margin-top: 100px;
+    margin-left: 80px;
+}
+#middle img{
+    display: block;
+    margin: 60px;
+    float: right;
+    width: 750px;
+}
+#third{
+    margin-top: 40px;
+    display: flex;
+}
+#third img{
+    width: 600px;
+
+}
+#subjects{
+    margin: auto;
+    font-size: 3pc;
+}
+#subjects a:hover{
+    text-decoration: none;
+}
+#subjects li{
+    font-weight: bold;
+}
+#footer{
+    height: 60px;
+}
+.myModalTitle{
+    background: lightgreen;
+    color: #ffffff;
+}
+.myModalLabel{
+    font-size: 2pc;
+}

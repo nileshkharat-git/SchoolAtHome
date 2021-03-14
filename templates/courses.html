@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/courses.css' %}">
+    <title>Select Courses</title>
+</head>
+<body>
+    <div id="main-div">
+        <div id="title-div">
+            <h1 id="title-h1">Select Courses</h1>
+        </div>
+         <div id="option-div">
+            {% for course_type in courses %}
+            <table>
+                <thead>
+                    <th><h3>{{course_type.course_type_name}}</h3></th>
+                </thead>
+                <tbody>
+                    {% for channel in channels %}
+                        {% if channel.channel_type == course_type %}
+                            <tr>
+                                <td><a href="{% url 'show_video' channel_id=channel.id %}">{{channel.channel_name}}</a></td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endfor %}
+        </div>
+        <div id="list-div">
+            {% for course in channels %}
+            <div class="course-div">
+                <a href="{% url 'show_video' channel_id=course.id %}" class="course-link-a">
+                    {% if course.channel_logo %}
+                        <img src="{{course.channel_logo.url}}" alt="" class="thumbnail">
+                        {% else %}
+                        <img src="{% static 'images/No-Photo-Available.png'%}" alt="Logo not found" class="thumbnail" >
+                    {% endif %}
+                    <p class="discription-p">
+                        <h5 class="course-title-h3">{{course.channel_name}}<br><span class="course-type-span"> Cource Type:{{course.channel_type}}</span> <br>
+                            <span class="course-type-span bg-warning text-light p-1">Add</span></h5>
+                    </p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>

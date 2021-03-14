@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+  <head>
+    <title>Lecture Play</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/lecture_play.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plyr.css' %}" />
+  </head>
+  <body>
+    <div id="player-div">
+      <video id="player" width="850" data-poster="{{lecture.thumbnail.url}}">
+        <source
+          src="{{lecture.lecture.url}}"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div id="lecture-list">
+      {% for lecture in lec_list %}
+      <div class="lecture-div">
+        <a href="{% url 'lecture_play' lec_id=lecture.id %}" class="d-flex">
+          <img
+            src="{{lecture.thumbnail.url}}"
+            alt=""
+            width="150"
+            height="80"
+            class="m-1"
+          />
+          <p class="m-2">
+            {{lecture.lecture}}
+          </p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <script src="{% static 'js/plyr.polyfilled.js' %}"></script>
+    <script>
+      const player = new Plyr("#player");
+    </script>
+    <script>
+      var xhr=new XMLHttpRequest();
+      xhr.onreadystatechange=function(){
+        xhr.open("GET","/unversity_apply/lecture-play/{{lecture.id}}/","true");
+        xhr.send();
+        
+      };
+    </script>
+  </body>
+</html>

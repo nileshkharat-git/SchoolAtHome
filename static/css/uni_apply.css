@@ -1,0 +1,13 @@
+#title-div {
+  position: relative;
+  margin: 100px;
+  background: lightgreen;
+  border-radius: 40px;
+}
+#title-h1 {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px 0;
+  text-shadow: 3px 3px 7px black;
+}
+

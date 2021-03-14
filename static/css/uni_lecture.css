@@ -1,0 +1,35 @@
+span {
+    position: absolute;
+    color: #fff;
+    right: 10px;
+    bottom: 80px;
+    font-weight: bold;
+  }
+  .card{
+      margin: 10px 30px;
+      border: 2px solid white;
+      box-shadow: 0 0 7px black;      }
+  .row,.col-md-3{
+      justify-content: space-evenly;
+  }
+  .dark-shadow{
+    width: 284px;
+    height: 119.762PX;
+    background: transparent;
+    opacity: 0.5;
+    position:absolute;
+    transition: 700ms;
+  }
+  .card-body{
+    background: lightgreen;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+    font-family: arial;
+  }
+  a:hover{
+    text-decoration: none;
+    color: white;
+
+  }
